@@ -1,6 +1,5 @@
-# 🚗 SUAL Araç Kiralama Sistemi
+# SUAL Araç Kiralama Sistemi
 
-**Hazırlayanlar:** 230401116 Sude Turan & 230401057 Alim Emir Aydoğan
 **Ders:** Görsel Programlama
 **Platform:** Windows Forms (.NET Framework 4.7.2)
 **Veritabanı:** SQLite
@@ -65,14 +64,14 @@ Veritabanı olarak SQLite kullanılmaktadır; uygulama ilk çalıştığında ve
 
 ## Müşteri Paneli Kullanımı
 
-### 1️⃣ Giriş / Kayıt
+### Giriş / Kayıt
 
 Müşteri paneli açıldığında ortada bir TC Kimlik Doğrulama kutusu çıkar:
 
 - **Mevcut Müşteri:** 11 haneli TC Kimlik numarasını girerek **TC ile Giriş Yap** butonuna tıklayın.
 - **Yeni Müşteri:** **Yeni Kayıt Oluştur** linkine tıklayıp Ad, Soyad ve TC bilgilerini girerek sisteme kayıt olun.
 
-### 2️⃣ Araç Arama ve Kiralama
+### Araç Arama ve Kiralama
 
 Giriş yaptıktan sonra Kiralama ekranı açılır:
 
@@ -94,7 +93,7 @@ Giriş yaptıktan sonra Kiralama ekranı açılır:
 
 > **Önemli:** Bir araç kiralandığında, o tarih aralığında tüm şehirlerde listeden otomatik olarak kaldırılır (tekrarlı kiralama engellenir).
 
-### 3️⃣ Kiralamalarım
+### Kiralamalarım
 
 Sağ üst köşedeki **Kiralamalarım** butonuna tıklayarak:
 
@@ -106,7 +105,7 @@ Sağ üst köşedeki **Kiralamalarım** butonuna tıklayarak:
 
 Admin paneli sol taraftaki sidebar menüsü ile 4 ana bölümden oluşur:
 
-### 1️⃣ Dashboard (Özet Raporlar)
+### Dashboard (Özet Raporlar)
 
 | Kart | Açıklama |
 |---|---|
@@ -115,7 +114,7 @@ Admin paneli sol taraftaki sidebar menüsü ile 4 ana bölümden oluşur:
 | Toplam Müşteri | Sisteme kayıtlı müşteri sayısı |
 | Kupon İstatistikleri | Kupon kullanım oranları |
 
-### 2️⃣ Filo Yönetimi
+### Filo Yönetimi
 
 **Sol taraf — Araç Tablosu:**
 - Filodaki tüm araçlar listelenir (ID, Marka, Model, Yıl, Fiyat, Segment)
@@ -139,14 +138,14 @@ Admin paneli sol taraftaki sidebar menüsü ile 4 ana bölümden oluşur:
 
 > **Not:** Bakım sistemi şehir bazlıdır. Bir araç İstanbul'da bakımdayken Ankara'da kiralanabilir.
 
-### 3️⃣ Kiralama Takibi
+### Kiralama Takibi
 
 - Tüm kiralamaların detaylı listesi (Müşteri, Araç, Şehir, Tarihler, Tutar, Kupon, Durum)
 - Arama kutusu ile TC, müşteri adı veya araç adına göre filtreleme
 - Durum renkleri: Yeşil = Aktif | Kırmızı = İptal Edilmiş
 - **Seçili Kiralamayı İptal Et** butonu ile yönetici herhangi bir kiralamayı iptal edebilir
 
-### 4️⃣ Yorum & Şikayet Paneli
+### Yorum & Şikayet Paneli
 
 - Müşterilerin araçlara yaptığı tüm yorumlar listelenir
 - Yıldız puanları gösterilir (★★★★★ formatında)
