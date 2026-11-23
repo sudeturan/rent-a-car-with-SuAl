@@ -1,0 +1,27 @@
+# Visual Studio / .NET build artifacts
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache/options
+.vs/
+
+# NuGet
+packages/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+# Runtime SQLite database (regenerated automatically on first run)
+*.db
+*.db-shm
+*.db-wal
+
+# OS files
+Thumbs.db
+desktop.ini
