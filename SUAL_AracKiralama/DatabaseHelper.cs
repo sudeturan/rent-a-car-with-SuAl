@@ -325,6 +325,11 @@ namespace SUAL_AracKiralama
                         cmd.Parameters.AddWithValue("@id", musteriId);
                         cmd.ExecuteNonQuery();
                     }
+                    using (SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Yorumlar WHERE MusteriId = @id", con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", musteriId);
+                        cmd.ExecuteNonQuery();
+                    }
                     using (SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Musteriler WHERE Id = @id", con))
                     {
                         cmd.Parameters.AddWithValue("@id", musteriId);
@@ -463,8 +468,22 @@ namespace SUAL_AracKiralama
                 using (SQLiteConnection con = new SQLiteConnection(Baglanti))
                 {
                     con.Open();
-                    string sql = "DELETE FROM Arabalar WHERE Id = @id";
-                    using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
+                    using (SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Kiralamalar WHERE ArabaId = @id", con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", arabaId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Yorumlar WHERE ArabaId = @id", con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", arabaId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand("DELETE FROM BakimdakiAraclar WHERE ArabaId = @id", con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", arabaId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand("DELETE FROM Arabalar WHERE Id = @id", con))
                     {
                         cmd.Parameters.AddWithValue("@id", arabaId);
                         cmd.ExecuteNonQuery();

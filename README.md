@@ -17,6 +17,7 @@
 8. [Proje Dosya Yapısı](#proje-dosya-yapısı)
 9. [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
 10. [Öne Çıkan Özellikler](#öne-çıkan-özellikler)
+11. [Yapılan İyileştirmeler ve Düzeltmeler](#yapılan-i̇yileştirmeler-ve-düzeltmeler)
 
 ## Proje Hakkında
 
@@ -262,3 +263,13 @@ SuAl/
 **Canlı Dashboard** — Yönetici anında toplam ciro, aktif kiralama sayısı, müşteri sayısı ve kupon istatistiklerini görüntüleyebilir.
 
 **Gelişmiş Arama** — Kiralama takibinde TC numarası, müşteri adı veya araç markası ile anlık filtreleme yapılabilir.
+
+## Yapılan İyileştirmeler ve Düzeltmeler
+
+Proje GitHub'a taşınırken aşağıdaki düzeltmeler yapıldı:
+
+- **Kiralama iptal kontrolü düzeltildi** — Müşteri paneli, süresi bitmiş veya zaten iptal edilmiş bir kiralamayı tekrar "iptal edilebilir" olarak göstermiyordu kontrolün yanlış metinle kıyaslanması yüzünden; artık sadece **✅ Aktif** durumundaki kiralamalar iptal edilebiliyor.
+- **Müşteri silme işlemi veri bütünlüğünü koruyor** — Bir müşteri silindiğinde, o müşteriye ait yorumlar da birlikte siliniyor (önceden veritabanında öksüz kalıp admin panelindeki yorum listesinden sessizce kayboluyorlardı).
+- **Araç silme işlemi veri bütünlüğünü koruyor** — Bir araç filodan silindiğinde, o araca ait kiralama geçmişi, yorumlar ve bakım kayıtları da birlikte temizleniyor (önceden bu kayıtlar veritabanında öksüz kalıp kiralama takibi ve yorum panellerinden sessizce kayboluyorlardı).
+- **Giriş ekranındaki arka plan görseli yerelleştirildi** — Önceden her açılışta internetten (Unsplash) indiriliyordu; artık GDI+ ile yerel olarak üretiliyor, böylece internet bağımlılığı ve açılış gecikmesi ortadan kalktı.
+- **NuGet paketleri temizlendi** — `packages.config` içindeki kullanılmayan/çakışan `Microsoft.Data.Sqlite` paket aileleri kaldırıldı, proje yalnızca kullandığı `System.Data.SQLite` paketine bağlı.

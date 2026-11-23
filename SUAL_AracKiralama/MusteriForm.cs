@@ -641,9 +641,12 @@ namespace SUAL_AracKiralama
                 ListViewItem seciliSatir = lvKiralamalar.SelectedItems[0];
                 string durum = seciliSatir.SubItems[5].Text;
 
-                if (durum == "⏹️ Tamamlandı")
+                if (durum != "✅ Aktif")
                 {
-                    MessageBox.Show("Geçmişte tamamlanmış kiralamaları iptal edemezsiniz ", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    string mesaj = durum.Contains("İptal")
+                        ? "Bu kiralama zaten iptal edilmiş."
+                        : "Geçmişte tamamlanmış kiralamaları iptal edemezsiniz.";
+                    MessageBox.Show(mesaj, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
